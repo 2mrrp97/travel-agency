@@ -335,13 +335,15 @@ body {
   background-color: #151515;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 770px) {
   .reviews {
     display: flex;
     min-width: 100vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    margin-bottom: 20px;
   }
 }
 
