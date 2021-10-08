@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  background-color: rgb(37, 37, 37);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.mynavbar {
+  padding: 3px;
+  display: flex;
+  position: relative;
+}
+
+/* display flexing column */
+.linkContainer,
+.mytoggler,
+.abtContainer,
+.aboutPicture {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+/* display flexing column end */
+
+/* intro section where mountain is */
+.intro {
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  z-index: -11111;
+}
+/* intro section end */
+
+/* sidebar css  */
+/* sidebar links container , ie : the unordered list  */
+.linkContainer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(400%);
+  transition: all 0.5s ease;
+  height: 100vh;
+  width: 30vw;
+  background-color: rgba(53, 53, 53, 1);
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: -2px 2px 10px black;
+}
+
+/* li s */
+.mynavitem {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* a href inside nav li */
+.mynavlinks {
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 2px;
+  padding: 5px;
+  font-size: 1.2rem;
+  color: rgb(226, 226, 226);
+  position: relative;
+}
+
+.mynavlinks::before {
+  content: "";
+  background: rgb(226, 226, 226);
+  height: 3px;
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  transition: width 0.5s ease;
+}
+
+.mynavlinks:hover::before {
+  width: 90%;
+}
+
+@media (max-width: 650px) {
+  .linkContainer {
+    width: 100vw;
+  }
+}
+
+/* sidebar css end */
+
+/* da toggler */
+.mytoggler {
+  align-items: flex-start;
+  border: 2px solid rgb(226, 226, 226);
+  border-radius: 5px;
+  height: 2rem;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  z-index: 999;
+  position: fixed;
+  right: 10px;
+  background: rgba(46, 46, 46, 0.5);
+}
+
+.mytoggler:hover {
+  box-shadow: 1px 1px 5px rgb(226, 226, 226);
+}
+
+/* the divs inside toggler */
+.mytoggler_ti {
+  height: 3px;
+  background: rgb(226, 226, 226);
+  width: 1.5rem;
+  margin: 2px;
+}
+/* da toggler end */
+
+/* the part in infront of mountains */
+.abtContainer {
+  background: rgba(46, 46, 46, 0.3);
+  word-wrap: break-word;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  margin-top: 7vh;
+  min-height: 70vh;
+}
+
+.fancy-container {
+  overflow: hidden;
+}
+
+.fancy-text {
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+  transform: translateY(200%);
+  transition: all 2s ease-in-out;
+  display: inline-block;
+  color: rgb(0, 1, 61);
+  word-wrap: break-word;
+  max-width: 25rem;
+  margin-top: 20px;
+}
+
+.fancy-text::before {
+  content: "";
+  background: rgb(0, 1, 61);
+  height: 5px;
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  transition: width 0.5s ease;
+}
+
+.fancy-text:hover::before {
+  width: 100%;
+}
+
+.show-fancy-text {
+  transform: translateY(0);
+}
+
+.aboutus {
+  width: 60%;
+  margin: 10px auto;
+  font-size: 2rem;
+}
+
+.time {
+  color: white;
+  outline: none;
+  margin: 0 auto;
+  padding: 10px;
+  font-weight: 700;
+  background-color: rgba(46, 46, 46, 0.5);
+  border-radius: 10px;
+  min-width: 10rem;
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+@media (max-width: 300px) {
+  .time {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .abtContainer {
+    margin-top: 2vh;
+  }
+}
+
+@media (max-width: 380px) {
+  .abtContainer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+  }
+
+  .time {
+    display: none;
+  }
+
+  .fancy-container {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .aboutus {
+    display: none;
+  }
+}
+
+.mybtn {
+  padding: 10px 20px;
+  border: 2px solid white;
+  background: none;
+  color: white;
+  border-radius: 5px;
+  min-width: 10rem;
+  margin: 10px auto;
+}
+
+.mybtn:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+.icons {
+  height: 1rem;
+  filter: invert(1);
+  margin-left: 5px;
+}
+/* the container infront of mountains end */
+
+/* top 3 pics part */
+.whatwedocards {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.whatwedocards:hover {
+  box-shadow: 2px 2px 5px black;
+}
+
+.imgs {
+  height: 100%;
+  width: 100%;
+}
+.aboutPicture {
+  position: absolute;
+  background: rgba(24, 24, 24, 0.8);
+  width: 100%;
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+/* top 3 pics part end */
+
+/* plan cards part */
+
+.plancards,
+.CEOquote {
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  min-height: 70vh;
+  min-width: 350px;
+  position: relative;
+}
+
+.plancards::before {
+  content: "";
+  height: 100%;
+  background-color: #222831;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  transform: rotate(-45deg);
+}
+
+.plancards:hover {
+  box-shadow: 3px 3px 10px black;
+  background-color: rgba(54, 54, 54, 0.8);
+}
+
+/* plan cards part end */
+
+/* customer reviews part */
+.reviews {
+  padding: 50px;
+  box-shadow: 2px 2px 10px black;
+  width: 60vw;
+  min-height: 80vh;
+  position: relative;
+  transition: all 0.3s ease;
+  background-color: #151515;
+}
+
+@media (max-width: 720px) {
+  .reviews {
+    display: flex;
+    min-width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.reviewPictures {
+  height: 15rem;
+  border-radius: 46% 54% 49% 51% / 50% 49% 51% 50%;
+  box-shadow: 1px 1px 5px black;
+  display: block;
+  margin: 10px auto;
+}
+
+.reviews:hover {
+  box-shadow: 4px 4px 10px black;
+}
+
+#reviewAbout {
+  margin: 10px auto;
+}
+
+.next-prev-btns {
+  height: 4rem;
+  filter: invert(1);
+  position: absolute;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: all 0.3s ease-in-out;
+  display: block;
+}
+
+.next-btn {
+  top: 40%;
+  right: 20px;
+}
+
+.prev-btn {
+  top: 40%;
+  left: 20px;
+  transform: rotate(180deg);
+}
+
+.next-prev-btns:hover {
+  height: 4.3rem;
+}
+/* customer reviews part */
+
+/* out partners part */
+
+.partnerLogos {
+  height: 4rem;
+}
+
+/* our partners part end */
+
+/* for the fancy heading like what we do , plans and all */
+
+.fancyheadings {
+  color: White;
+  position: relative;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.fancyheadings::before {
+  content: "";
+  background: rgb(236, 236, 255);
+  height: 5px;
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  transition: width 0.5s ease;
+}
+
+.fancyheadings:hover::before {
+  width: 100%;
+}
+
+/* fancy heading end */
+
+/* misc helper classes */
+.show {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 99;
+}
+
+.myContainer {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.showabtDiv {
+  transform: translateY(-100%);
+}
+
+/* connect with us part */
+
+.contactus {
+  position: fixed;
+  top: 35vh;
+  left: 0;
+  border: 1px solid white;
+  background-color: #151515;
+  border-radius: 10px;
+  transform: translateX(-120%);
+  transition: all 0.5s ease;
+  z-index: 999;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 55px;
+  height: 250px;
+}
+.show-contactus {
+  transform: translateX(-10%);
+}
+.connect-with-us-icons {
+  transition: all 0.8s ease-in-out;
+  display: block;
+  margin: 20px auto;
+}
+.connect-with-us-icons:hover {
+  transform: rotate(360deg);
+}
+
+/* connect with us part end */
