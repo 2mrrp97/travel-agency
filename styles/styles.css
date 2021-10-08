@@ -264,6 +264,15 @@ body {
 /* the container infront of mountains end */
 
 /* top 3 pics part */
+.whatwedotext {
+  padding: 50px;
+}
+@media (max-width: 550px) {
+  .whatwedotext {
+    padding: 20px;
+  }
+}
+
 .whatwedocards {
   position: relative;
   display: inline-block;
@@ -361,8 +370,14 @@ body {
 
 #reviewAbout {
   margin: 10px auto;
+  padding: 20px;
 }
 
+@media (max-width: 500px) {
+  #reviewAbout {
+    padding: 0;
+  }
+}
 .next-prev-btns {
   height: 4rem;
   filter: invert(1);
